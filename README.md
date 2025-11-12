@@ -271,6 +271,23 @@ This generates a timestamped CSV file with 34 columns, ready for AI training wit
 
 **Output**: `output/procurement-training-data-YYYY-MM-DD.csv`
 
+### Interactive Analysis with Jupyter
+
+For exploratory analysis and model training:
+
+```bash
+pip install -r requirements.txt
+cd notebooks
+jupyter notebook
+# Open procurement_analysis.ipynb
+```
+
+The notebook includes:
+- Data conversion from JSON to CSV
+- Exploratory Data Analysis (EDA)
+- Isolation Forest training
+- Visualization and export
+
 ### Isolation Forest Anomaly Detection
 
 Built-in implementation of Isolation Forest algorithm for unsupervised anomaly detection:

@@ -13,6 +13,14 @@ python3 scripts/convert_to_csv.py
 python3 scripts/convert_to_csv.py public/data.json output/my-data.csv
 ```
 
+### Or Use Jupyter Notebook (Interactive)
+```bash
+pip install -r requirements.txt
+cd notebooks
+jupyter notebook
+# Open procurement_analysis.ipynb and run all cells
+```
+
 Output: `output/procurement-training-data-YYYY-MM-DD.csv` (34 columns, timestamped)
 
 ### Use in Code
