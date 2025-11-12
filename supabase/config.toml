@@ -1,0 +1,4 @@
+project_id = "ypdqelfrqldchktyufho"
+
+[functions.fetch-notices]
+verify_jwt = false
