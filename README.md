@@ -251,6 +251,62 @@ supabase/
 - No personal data collection
 - CORS headers configured for API security
 
+## 🤖 AI & Machine Learning
+
+The system includes advanced machine learning capabilities for enhanced anomaly detection and AI training data preparation.
+
+### Data Export for AI Training
+
+Convert procurement data to CSV format for machine learning using Python:
+
+```bash
+# Using npm script (recommended)
+npm run convert:csv
+
+# Or use Python directly
+python3 scripts/convert_to_csv.py
+```
+
+This generates a timestamped CSV file with 34 columns, ready for AI training with tools like Python/scikit-learn, TensorFlow, or PyTorch.
+
+**Output**: `output/procurement-training-data-YYYY-MM-DD.csv`
+
+### Interactive Analysis with Jupyter
+
+For exploratory analysis and model training:
+
+```bash
+pip install -r requirements.txt
+cd notebooks
+jupyter notebook
+# Open procurement_analysis.ipynb
+```
+
+The notebook includes:
+- Data conversion from JSON to CSV
+- Exploratory Data Analysis (EDA)
+- Isolation Forest training
+- Visualization and export
+
+### Isolation Forest Anomaly Detection
+
+Built-in implementation of Isolation Forest algorithm for unsupervised anomaly detection:
+
+```typescript
+import { trainAndDetectAnomalies } from '@/lib/isolationForest';
+
+const result = await trainAndDetectAnomalies(procurementData);
+console.log('Anomalies detected:', result.anomalyIndices);
+```
+
+**Features detected:**
+- Unusual contract values
+- Abnormal deadline patterns
+- Outlier bidding behavior
+- Suspicious procedure types
+
+📖 **[Complete AI Training Guide](docs/AI_TRAINING_GUIDE.md)** - Detailed documentation on ML integration, feature engineering, and model training.
+
 ## 🤝 Contributing
 
 This is an open-source civic technology project. Contributions are welcome!
@@ -261,6 +317,8 @@ This is an open-source civic technology project. Contributions are welcome!
 - [SICAP Parser](https://github.com/ciocan/sicap-parser)
 - [SICAP.AI](https://github.com/ciocan/sicap.ai)
 - [OCDS Standard](https://standard.open-contracting.org/)
+- [Isolation Forest Algorithm](https://www.geeksforgeeks.org/machine-learning/what-is-isolation-forest/)
+- [CertSign ShellSafe](https://www.certsign.ro/ro/shellsafe-verify/) - For opening e-licitatie attachments
 
 ## 📄 License
 
