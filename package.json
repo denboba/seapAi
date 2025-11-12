@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "convert:csv": "node scripts/convertToCSV.cjs"
+    "convert:csv": "python3 scripts/convert_to_csv.py"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -18,21 +18,39 @@ This guide explains how to prepare procurement data for AI training and integrat
 
 The system includes utilities to convert the procurement data from JSON format to CSV for AI training.
 
-### Using the Command-Line Script
+### Using the Python Script (Recommended)
 
-The easiest way to convert data is using the provided Node.js script:
+The primary conversion tool is a Python script that's ideal for data science workflows:
 
 ```bash
-# Convert using default paths (public/data.json → output/procurement-training-data.csv)
+# Convert using default paths (recommended)
 npm run convert:csv
 
-# Or specify custom input/output paths
+# Or use Python directly
+python3 scripts/convert_to_csv.py
+
+# Specify custom input/output paths
+python3 scripts/convert_to_csv.py public/data.json output/my-data.csv
+```
+
+**Python Script Features:**
+- Native Python CSV library (proper quoting and escaping)
+- Automatic timestamped output filenames
+- Progress tracking every 500 records
+- UTF-8 encoding support
+- Requires Python 3.6+
+
+### Alternative: Node.js Script
+
+For compatibility with Node.js workflows:
+
+```bash
 node scripts/convertToCSV.cjs path/to/input.json path/to/output.csv
 ```
 
 ### Using the TypeScript Library
 
-For programmatic conversion in the application:
+For programmatic conversion in the browser application:
 
 ```typescript
 import { exportDataForAITraining } from '@/lib/dataConverter';

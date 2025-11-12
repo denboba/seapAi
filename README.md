@@ -257,13 +257,19 @@ The system includes advanced machine learning capabilities for enhanced anomaly 
 
 ### Data Export for AI Training
 
-Convert procurement data to CSV format for machine learning:
+Convert procurement data to CSV format for machine learning using Python:
 
 ```bash
+# Using npm script (recommended)
 npm run convert:csv
+
+# Or use Python directly
+python3 scripts/convert_to_csv.py
 ```
 
-This generates a flattened CSV file with 34 columns, ready for AI training with tools like Python/scikit-learn, TensorFlow, or PyTorch.
+This generates a timestamped CSV file with 34 columns, ready for AI training with tools like Python/scikit-learn, TensorFlow, or PyTorch.
+
+**Output**: `output/procurement-training-data-YYYY-MM-DD.csv`
 
 ### Isolation Forest Anomaly Detection
 
