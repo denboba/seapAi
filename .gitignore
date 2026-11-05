@@ -25,3 +25,8 @@ output/
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables (never commit secrets)
+.env
+.env.*
+!.env.example
