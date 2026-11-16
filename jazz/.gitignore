@@ -1,0 +1,4 @@
+# Generated audio (large) is not tracked
+*.mp3
+*.wav
+tracks/
